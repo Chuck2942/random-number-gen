@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: random-api-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: random-api
+  template:
+    metadata:
+      labels:
+        app: random-api
+    spec:
+      containers:
+      - name: random-api
+        image: chuck12/random-api:latest
+        ports:
+        - containerPort: 5000
+

@@ -1,0 +1,57 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Random Number Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .number {
+      font-size: 2rem;
+      margin: 20px 0;
+      color: #007BFF;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    button {
+      background-color: #007BFF;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎰 Random Number Generator</h1>
+
+  {% if number is not none %}
+    <div class="number">Your number is: <strong>{{ number }}</strong></div>
+  {% endif %}
+
+  <form method="post">
+    <button type="submit">Generate Number</button>
+  </form>
+</body>
+</html>
